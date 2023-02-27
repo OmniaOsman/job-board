@@ -2,7 +2,7 @@ from django.shortcuts import redirect, render
 from django.urls import reverse
 from .models import Job
 from django.core.paginator import Paginator
-from .form import ApplyForm, PostJob
+from .forms import ApplyForm, PostJob
 
 # Create your views here.
 def job_list(request):
