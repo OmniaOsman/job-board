@@ -3,16 +3,24 @@ from django.urls import reverse
 from .models import Job
 from django.core.paginator import Paginator
 from .forms import ApplyForm, PostJob
+from django.contrib.auth.decorators import login_required
+from .filters import JobFilter
+
 
 # Create your views here.
 def job_list(request):
     jobs_list = Job.objects.all()
+    
+    # filter
+    filter = JobFilter(request.GET, queryset=jobs_list)
+    jobs_list = filter.qs
+    
     # pagination
     paginator = Paginator(jobs_list, 3) 
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     
-    context = {'jobs': page_obj}
+    context = {'jobs': page_obj, 'filter': filter}
     return render(request, 'job/job_list.html', context)
 
 
@@ -33,6 +41,7 @@ def job_details(request, slug):
     return render(request, 'job/job_details.html', context)
 
 
+@login_required
 def add_job(request):
     # Post new job
     if request.method == 'POST':
