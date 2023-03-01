@@ -20,7 +20,7 @@
                             {% bootstrap_form userForm %}
                             {% bootstrap_form profileForm %}
                             {% buttons %}
-                                <button type="submit" class='boxed-btn3 w-100'>Save</button>
+                                <button href="{% url 'accounts:profile' %}" type="submit" class='boxed-btn3 w-100'>Save</button>
                             {% endbuttons %}
                         </form>
                     </div>

@@ -64,10 +64,12 @@
                                     {% if request.user.is_authenticated %}
                                     <div class="phone_num d-none d-xl-block">
                                         <a href="{% url 'accounts:profile' %}">profile</a>
+                                        <a href="{% url 'logout' %}">log out</a>
                                     </div>
                                     {% else %}
                                     <div class="phone_num d-none d-xl-block">
                                         <a href="{% url 'login' %}">Log in</a>
+                                        <a href="{% url 'accounts:signup' %}">Sign up</a>
                                     </div>
                                     {% endif %}
                                     <div class="d-none d-lg-block">
@@ -80,7 +82,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
