@@ -25,7 +25,6 @@ class Job(models.Model):
     salary       = models.IntegerField(default=0)
     experience   = models.IntegerField(default=1)
     category     = models.ForeignKey("Category", on_delete=models.CASCADE)
-    image        = models.ImageField(upload_to=uploaded_image)
     slug         = models.SlugField(blank=True, null=True)
     job_owner    = models.ForeignKey(User, related_name='job_owner', on_delete=models.CASCADE)   
     
