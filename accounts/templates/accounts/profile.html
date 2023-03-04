@@ -30,6 +30,7 @@
                                 <li>Email: <span>{{ profile.user.email }}</span></li>
                                 <li>Address: <span>{{ profile.city }}</span></li>
                                 <li>Phone: <span>{{ profile.phone }}</span></li>
+                                <li><a href="{% url 'password_change' %}">Reset Password</a></li>
                             </ul>
                         </div>
                         <div class='p-5'>
@@ -41,4 +42,5 @@
         </div>
     </div>
 {% endblock body %}
+
  

@@ -115,7 +115,7 @@ env = Env()
 env.read_env()
 SECRET_KEY = env.str("SECRET_KEY")
 DATABASES = {
-"default": env.dj_db_url("DATABASE_URL")
+    "default": env.dj_db_url("DATABASE_URL")
 }
 
 # Email settings
@@ -145,5 +145,5 @@ MEDIA_ROOT = BASE_DIR / "media"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-CITIES_LIGHT_TRANSLATION_LANGUAGES = ['en']
-CITIES_LIGHT_INCLUDE_COUNTRIES = ['FR']
+CITIES_LIGHT_TRANSLATION_LANGUAGES = ['en', 'arz']
+CITIES_LIGHT_INCLUDE_COUNTRIES = ['FR', 'BE']
