@@ -21,3 +21,6 @@ class ProfileForm(forms.ModelForm):
         model = Profile
         fields = '__all__'
         exclude = ('user',)
+        # widgets = {
+        #     'city': forms.Select(attrs={'size': 10})
+        # }

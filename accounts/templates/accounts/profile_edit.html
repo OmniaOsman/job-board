@@ -19,6 +19,12 @@
                             {% csrf_token %}
                             {% bootstrap_form userForm %}
                             {% bootstrap_form profileForm %}
+                            <select id="{{ profileForm.city.id_for_label }}" name="{{ profileForm.city.name }}" class="form-select" size="5">
+                                {% for city in profileForm.city %}
+                                    <option value="{{ city.value }}">{{ city.label }}</option>
+                                {% endfor %}
+                            </select>
+                            
                             {% buttons %}
                                 <button href="{% url 'accounts:profile' %}" type="submit" class='boxed-btn3 w-100'>Save</button>
                             {% endbuttons %}
@@ -30,4 +36,8 @@
         </div>
     </div>
 {% endblock body %}
- 
+<script>
+    $(document).ready(function() {
+      $('select').select2();
+    });
+</script>
