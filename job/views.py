@@ -9,7 +9,7 @@ from .filters import JobFilter
 
 # Create your views here.
 def job_list(request):
-    jobs_list = Job.objects.all()
+    jobs_list = Job.objects.all().order_by('-published_at')
     
     # filter
     filter = JobFilter(request.GET, queryset=jobs_list)
