@@ -3,7 +3,7 @@
 Website for job board 
 
 #### It contains:
-- Bro#wse Jobs 
+- Browse Jobs 
 - Filter Jobs
 - Apply for job
 - Post a job (if user authenticated)
