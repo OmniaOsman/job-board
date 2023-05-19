@@ -9,6 +9,7 @@ Website for job board
 - Post a job (if user authenticated)
 - sign up and login
 - contact using email
+- Blog (not complete yet)
 
 
 #### Tools:
